@@ -30,7 +30,7 @@ function Search() {
 
         // Gọi API với giá trị mới nhất của searchTerm
         const fetchData = async () => {
-            const response = await fetch(`https://api.pexels.com/v1/search?query=${debounced}&per_page=30&page=1`, {
+            const response = await fetch(`https://api.pexels.com/v1/search?query=${debounced}&per_page=60&page=1`, {
                 headers: {
                     Authorization: '1xMN3dH6w220PxQJEEGU8QkklRPzhqnZDeyN8sR3uPsrOiGSKpV95CM5',
                 },
