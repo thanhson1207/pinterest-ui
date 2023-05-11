@@ -1,16 +1,11 @@
-import {
-    faAngleDown,
-    faBell,
-    faCircleChevronDown,
-    faCircleXmark,
-    faCommentDots,
-    faMagnifyingGlass,
-    faPerson,
-} from '@fortawesome/free-solid-svg-icons';
+import './header.css';
+import React from 'react';
+import { faAngleDown, faBell, faCommentDots, faPerson } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Tippy from '@tippyjs/react/headless';
+import Tippy from '@tippyjs/react/headless'; // different import path!
+import 'tippy.js/dist/tippy.css'; // optional
 import { Link } from 'react-router-dom';
-// import 'tippy.js/dist/tippy.css'; // optional
+import Search from './search';
 
 function Header() {
     return (
@@ -46,12 +41,8 @@ function Header() {
                     </div>
                 </Tippy>
 
-                <div className="search">
-                    <FontAwesomeIcon className="search-icon" icon={faMagnifyingGlass} />
-                    <input className="search-input" placeholder="Search" />
-                    <FontAwesomeIcon className="close-search-icon" icon={faCircleXmark} />
-                </div>
-
+                {/* search */}
+                <Search />
                 <Tippy
                     interactive
                     trigger="click"

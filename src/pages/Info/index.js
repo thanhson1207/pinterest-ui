@@ -1,6 +1,13 @@
+import InfoContent from '../../components/InfoPageContent/InfoContent';
+import Header from '../../components/header/header';
+import './info.css';
+
 function Info() {
     return (
-        <div>Info</div>
+        <div>
+            <Header />
+            <InfoContent />
+        </div>
     );
 }
 

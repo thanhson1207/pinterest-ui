@@ -1,0 +1,16 @@
+.wrapper-body {
+    margin-top: 72px;
+}
+
+/* .wrapper-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+} */
+
+.wrapper-items {
+    column-count: 6;
+    column-gap: 0px;
+}

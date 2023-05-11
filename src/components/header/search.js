@@ -1,0 +1,109 @@
+import React, { useEffect, useContext } from 'react';
+import './search.css';
+import { useState, useRef } from 'react';
+
+import Tippy from '@tippyjs/react/headless'; // different import path!
+import 'tippy.js/dist/tippy.css'; // optional
+import { faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import useDebounce from '../../hooks/useDebounced';
+
+import { ApiContext } from '../../store/ApiContext';
+
+function Search() {
+    const { data, setData } = useContext(ApiContext);
+    const [searchValue, setSearchValue] = useState('Search');
+    const [showResult, setShowResult] = useState(false);
+
+    const debounced = useDebounce(searchValue, 500);
+
+    // useEffect(() => {
+    //     setSearchValue('photo');
+    // }, []);
+
+    useEffect(() => {
+        if (!debounced.trim()) {
+            setData([]);
+            return;
+        }
+
+        // Gọi API với giá trị mới nhất của searchTerm
+        const fetchData = async () => {
+            const response = await fetch(`https://api.pexels.com/v1/search?query=${debounced}&per_page=30&page=1`, {
+                headers: {
+                    Authorization: '1xMN3dH6w220PxQJEEGU8QkklRPzhqnZDeyN8sR3uPsrOiGSKpV95CM5',
+                },
+            });
+            const data = await response.json();
+            // Lưu kết quả vào Context
+            setData(data.photos);
+        };
+        fetchData();
+    }, [debounced]);
+    // const searchResult = useFetchdata(searchValue);
+
+    const inputRef = useRef();
+    const tippyRef = useRef();
+    const handleHideResult = () => {
+        setShowResult(false);
+        tippyRef.current?.destroy();
+    };
+
+    // const handleKeyDown = async (event) => {
+    //     if (event.key === 'Enter') {
+    //         fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(searchValue)}&per_page=5&page=1`, {
+    //             headers: {
+    //                 Authorization: '1xMN3dH6w220PxQJEEGU8QkklRPzhqnZDeyN8sR3uPsrOiGSKpV95CM5',
+    //             },
+    //         })
+    //             .then((res) => res.json())
+    //             .then((res) => {
+    //                 console.log(res.photos);
+    //             });
+    //     }
+    // };
+    return (
+        // <Tippy
+        //     instance={tippyRef}
+        //     interactive
+        //     visible={showResult && data.length > 0}
+        //     render={(attrs) => (
+        //         <div className="tippy-search" tabIndex="-1" {...attrs}>
+        //             {data.slice(0, 5).map((result) => (
+        //                 <button key={result.id} className="search-result">
+        //                     {result.alt}
+        //                 </button>
+        //             ))}
+        //         </div>
+        //     )}
+        //     onClickOutside={handleHideResult}
+        // >
+        <div className="search">
+            <FontAwesomeIcon className="search-icon" icon={faMagnifyingGlass} />
+            <input
+                ref={inputRef}
+                value={searchValue}
+                className="search-input"
+                placeholder=""
+                spellCheck={false}
+                onChange={(e) => setSearchValue(e.target.value)}
+                onFocus={() => setShowResult(true)}
+                // onKeyDown={handleKeyDown}
+            />
+            {!!searchValue && (
+                <FontAwesomeIcon
+                    className="close-search-icon"
+                    icon={faCircleXmark}
+                    onClick={() => {
+                        setSearchValue('');
+                        inputRef.current.focus();
+                    }}
+                />
+            )}
+        </div>
+        // </Tippy>
+    );
+}
+
+export default Search;

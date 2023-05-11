@@ -1,0 +1,180 @@
+.wrapper-header {
+    display: flex;
+}
+
+.logo {
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+    border-radius: 100%;
+}
+
+.logo:hover {
+    background-color: rgba(22, 24, 35, 0.13);
+}
+
+.inner {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 72px;
+    padding: 4px 16px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    /* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12); */
+}
+
+.Home-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 103.35px;
+    height: 48px;
+    margin-left: 8px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 999px;
+}
+
+.create {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 103.35px;
+    height: 48px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    user-select: none;
+}
+
+.create:hover {
+    background-color: rgba(22, 24, 35, 0.13);
+}
+
+.create-btn {
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.create-icon {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.tippy-create {
+    width: 170px;
+    height: 70px;
+    padding: 5px;
+    align-items: start;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 12px;
+    background-color: #fff;
+}
+
+.create-pin,
+.create-idea-pin {
+    width: 100%;
+    padding: 5px 8px;
+    font-size: 17px;
+    display: flex;
+    align-items: start;
+    border-radius: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.create-pin:hover,
+.create-idea-pin:hover {
+    background-color: rgba(22, 24, 35, 0.13);
+}
+
+.notification-btn {
+    padding: 7px;
+    margin-left: 5px;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.tippy-notification {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 12px;
+    background-color: #fff;
+}
+
+.notification-btn:hover {
+    background-color: rgba(22, 24, 35, 0.13);
+}
+
+.update {
+    font-weight: 400;
+    user-select: none;
+}
+
+.update-container {
+    margin-top: 10px;
+    width: 100%;
+    height: 200px;
+}
+
+.message-btn {
+    padding: 7px;
+    margin-left: 5px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: transparent;
+    opacity: 0.6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.message-btn:hover {
+    background-color: rgba(22, 24, 35, 0.13);
+}
+
+.information-btn {
+    padding: 7px;
+    margin-left: 5px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: transparent;
+    opacity: 0.6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.information-btn:hover {
+    background-color: rgba(22, 24, 35, 0.13);
+}
+
+.account-icon {
+    padding: 7px;
+    margin-left: 5px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: transparent;
+    opacity: 0.6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.account-icon:hover {
+    background-color: rgba(22, 24, 35, 0.13);
+}
