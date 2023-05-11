@@ -10,7 +10,7 @@ function ImageItem({ data }) {
                     state: { data: data },
                 }}
             >
-                <img className="image-item" src={data.src.original} />
+                <img className="image-item" src={data.src.tiny} />
             </Link>
         </div>
     );
