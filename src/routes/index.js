@@ -3,7 +3,8 @@ import Info from '../pages/Info';
 
 const publicRoutes = [
     { path: '/', component: Home },
-    { path: '/@:id', component: Info },
+    { path: '/info/:id', component: Info },
+    { path: '/search?q=:value', component: Search },
 ];
 const privateRputes = [];
 

@@ -11,16 +11,17 @@ import useDebounce from '../../hooks/useDebounced';
 
 import { ApiContext } from '../../store/ApiContext';
 
+import { Navigate, useNavigate } from 'react-router-dom';
+
 function Search() {
     const { data, setData } = useContext(ApiContext);
-    const [searchValue, setSearchValue] = useState('Search');
+    const [initialSearchValue, setInitialSearchValue] = useState('Search');
+    const [searchValue, setSearchValue] = useState(initialSearchValue);
     const [showResult, setShowResult] = useState(false);
 
     const debounced = useDebounce(searchValue, 500);
 
-    // useEffect(() => {
-    //     setSearchValue('photo');
-    // }, []);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!debounced.trim()) {
@@ -50,19 +51,13 @@ function Search() {
         tippyRef.current?.destroy();
     };
 
-    // const handleKeyDown = async (event) => {
-    //     if (event.key === 'Enter') {
-    //         fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(searchValue)}&per_page=5&page=1`, {
-    //             headers: {
-    //                 Authorization: '1xMN3dH6w220PxQJEEGU8QkklRPzhqnZDeyN8sR3uPsrOiGSKpV95CM5',
-    //             },
-    //         })
-    //             .then((res) => res.json())
-    //             .then((res) => {
-    //                 console.log(res.photos);
-    //             });
-    //     }
-    // };
+    const handleKeyDown = async (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            navigate(`/search/${encodeURIComponent(searchValue)}`, { state: { searchValue: searchValue } });
+        }
+    };
+
     return (
         // <Tippy
         //     instance={tippyRef}
@@ -83,13 +78,13 @@ function Search() {
             <FontAwesomeIcon className="search-icon" icon={faMagnifyingGlass} />
             <input
                 ref={inputRef}
-                value={searchValue}
+                value={searchValue === initialSearchValue ? '' : searchValue}
                 className="search-input"
-                placeholder=""
+                placeholder="Search"
                 spellCheck={false}
                 onChange={(e) => setSearchValue(e.target.value)}
                 onFocus={() => setShowResult(true)}
-                // onKeyDown={handleKeyDown}
+                onKeyDown={handleKeyDown}
             />
             {!!searchValue && (
                 <FontAwesomeIcon

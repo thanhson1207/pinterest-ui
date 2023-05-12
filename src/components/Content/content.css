@@ -11,6 +11,23 @@
 } */
 
 .wrapper-items {
-    column-count: 6;
     column-gap: 0px;
+}
+
+@media (min-width: 768px) {
+    .wrapper-items {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .wrapper-items {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1280px) {
+    .wrapper-items {
+        column-count: 6;
+    }
 }
