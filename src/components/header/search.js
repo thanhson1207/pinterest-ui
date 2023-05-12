@@ -2,8 +2,8 @@ import React, { useEffect, useContext } from 'react';
 import './search.css';
 import { useState, useRef } from 'react';
 
-import Tippy from '@tippyjs/react/headless'; // different import path!
-import 'tippy.js/dist/tippy.css'; // optional
+import Tippy from '@tippyjs/react/headless'; 
+import 'tippy.js/dist/tippy.css'; 
 import { faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -37,7 +37,6 @@ function Search() {
             return;
         }
 
-        // Gọi API với giá trị mới nhất của searchTerm
         const fetchData = async () => {
             const response = await fetch(`https://api.pexels.com/v1/search?query=${debounced}&per_page=60&page=1`, {
                 headers: {
@@ -45,12 +44,10 @@ function Search() {
                 },
             });
             const data = await response.json();
-            // Lưu kết quả vào Context
             setData(data.photos);
         };
         fetchData();
     }, [debounced]);
-    // const searchResult = useFetchdata(searchValue);
 
     const inputRef = useRef();
     const tippyRef = useRef();

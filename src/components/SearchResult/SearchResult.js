@@ -4,12 +4,9 @@ import ImageItem from '../ImageComponent/ImageItem';
 
 function ResultPage() {
     const location = useLocation();
-    console.log(location);
-    // const { searchTerm } = useParams();
     const [result, setResult] = useState([]);
 
     useEffect(() => {
-        // Gọi API với giá trị searchTerm
         const fetchData = async () => {
             const response = await fetch(
                 `https://api.pexels.com/v1/search?query=${location.state.searchValue}&per_page=60&page=1`,
@@ -26,15 +23,6 @@ function ResultPage() {
     }, [location]);
 
     return (
-        // <div>
-        //     <h1>Results for "{searchTerm}"</h1>
-        //     <ul>
-        //         {result.map((photo) => (
-        //             <li key={photo.id}>{photo.src.tiny}</li>
-        //         ))}
-        //     </ul>
-        // </div>
-
         <div className="wrapper-body">
             <div className="wrapper-items">
                 {result.map((item) => (

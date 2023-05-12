@@ -2,8 +2,8 @@ import './header.css';
 import React from 'react';
 import { faAngleDown, faBell, faCommentDots, faPerson } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Tippy from '@tippyjs/react/headless'; // different import path!
-import 'tippy.js/dist/tippy.css'; // optional
+import Tippy from '@tippyjs/react/headless';
+import 'tippy.js/dist/tippy.css';
 import { Link } from 'react-router-dom';
 import Search from './search';
 
