@@ -18,10 +18,18 @@ function Search() {
     const [initialSearchValue, setInitialSearchValue] = useState('Search');
     const [searchValue, setSearchValue] = useState(initialSearchValue);
     const [showResult, setShowResult] = useState(false);
-
+    const [showCloseIcon, setShowCloseIcon] = useState(false);
     const debounced = useDebounce(searchValue, 500);
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (searchValue === 'Search' || searchValue === '') {
+            setShowCloseIcon(false);
+        } else {
+            setShowCloseIcon(true);
+        }
+    }, [searchValue]);
 
     useEffect(() => {
         if (!debounced.trim()) {
@@ -86,7 +94,7 @@ function Search() {
                 onFocus={() => setShowResult(true)}
                 onKeyDown={handleKeyDown}
             />
-            {!!searchValue && (
+            {showCloseIcon && (
                 <FontAwesomeIcon
                     className="close-search-icon"
                     icon={faCircleXmark}

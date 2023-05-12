@@ -29,6 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* width: 103.35px; */
     width: 103.35px;
     height: 48px;
     margin-left: 8px;
@@ -178,4 +179,30 @@
 
 .account-icon:hover {
     background-color: rgba(22, 24, 35, 0.13);
+}
+
+@media (max-width: 680px) {
+    .create {
+        display: none;
+    }
+}
+@media (max-width: 680px) {
+    .message-btn {
+        display: none;
+    }
+}
+@media (max-width: 680px) {
+    .information-btn {
+        display: none;
+    }
+}
+@media (max-width: 680px) {
+    .account-icon {
+        display: none;
+    }
+}
+@media (max-width: 680px) {
+    .notification-btn {
+        display: none;
+    }
 }

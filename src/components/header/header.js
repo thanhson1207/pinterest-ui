@@ -54,7 +54,7 @@ function Header() {
                         </div>
                     )}
                 >
-                    <button className="notification-btn">
+                    <button className="notification-btn" id="disabled">
                         <FontAwesomeIcon icon={faBell} />
                     </button>
                 </Tippy>
@@ -63,7 +63,7 @@ function Header() {
                     <FontAwesomeIcon icon={faCommentDots} />
                 </button>
 
-                <Link to="/infomation" className="information-btn">
+                <Link to="/infomation" className="information-btn" id="disabled">
                     <FontAwesomeIcon icon={faPerson} />
                 </Link>
 
