@@ -28,7 +28,7 @@ function InfoContent() {
         <div className="content-info">
             <div className="container-info">
                 <div className="wrapper-image-infoPage">
-                    <img className="image-info" src={imageData.src.original} />
+                    <img className="image-info" src={imageData.src.medium} />
                 </div>
                 <div className="photographer-info">
                     <h2 className="imageData-alt">{imageData.alt}</h2>
