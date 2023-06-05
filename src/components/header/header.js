@@ -1,13 +1,18 @@
 import './header.css';
 import React from 'react';
-import { faAngleDown, faBell, faCommentDots, faPerson } from '@fortawesome/free-solid-svg-icons';
+import {
+    faAngleDown,
+    faSignOutAlt,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import { Link } from 'react-router-dom';
 import Search from './search';
+import { faFaceDizzy, faFaceSmileBeam } from '@fortawesome/free-regular-svg-icons';
+import { logout } from '../../Auth/firebase';
 
-function Header() {
+function Header({ name }) {
     return (
         <div className="wrapper-header">
             <div className="inner">
@@ -43,7 +48,7 @@ function Header() {
 
                 {/* search */}
                 <Search />
-                <Tippy
+                {/* <Tippy
                     interactive
                     trigger="click"
                     placement="bottom-end"
@@ -65,10 +70,15 @@ function Header() {
 
                 <Link to="/infomation" className="information-btn" id="disabled">
                     <FontAwesomeIcon icon={faPerson} />
-                </Link>
+                </Link> */}
 
-                <button className="account-icon">
-                    <FontAwesomeIcon icon={faAngleDown} />
+                <button className="name-Account">
+                    <FontAwesomeIcon className="name-Account-icon" icon={faFaceSmileBeam} />
+                    <p className="name-Account-value">{name}</p>
+                </button>
+
+                <button className="account-icon" onClick={logout}>
+                    <FontAwesomeIcon icon={faSignOutAlt} />
                 </button>
             </div>
         </div>
