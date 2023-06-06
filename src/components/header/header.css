@@ -191,6 +191,8 @@
     cursor: pointer;
     background-color: transparent;
     border: none;
+    justify-content: center;
+    align-items: center;
 }
 
 .name-Account-value {
