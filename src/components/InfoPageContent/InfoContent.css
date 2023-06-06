@@ -9,7 +9,7 @@
 
 .container-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 65%;
     height: 80%;
 
@@ -38,7 +38,7 @@
 .photographer-info {
     display: flex;
     margin: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     flex-direction: column;
     flex: 1;
     overflow-y: visible;
@@ -78,4 +78,21 @@
 
 .btn-open-image:hover {
     background-color: #d5d5d5;
+}
+
+@media (max-width: 900px) {
+    .container-info {
+        flex-direction: column;
+        width: 90%;
+        height: 90%;
+    }
+    .imageData-alt {
+        font-size: 20px;
+    }
+    .imageData-photographer {
+        font-size: 15px;
+    }
+    .imageData-comment {
+        font-size: 20px;
+    }
 }

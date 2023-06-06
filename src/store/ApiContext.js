@@ -1,5 +1,5 @@
 import { useState, createContext } from 'react';
-import useFetchdata from '../utils/useFetchdata';
+
 const ApiContext = createContext();
 
 function ApiProvider({ children }) {

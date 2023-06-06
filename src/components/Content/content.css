@@ -14,31 +14,15 @@
     column-gap: 0px;
 }
 
+@media (max-width: 768px) {
+    .wrapper-items {
+        column-count: 3;
+        padding: 10px;
+    }
+}
+
 @media (min-width: 768px) {
     .wrapper-items {
-        column-count: 2;
-    }
-}
-
-@media (min-width: 1024px) {
-    .wrapper-items {
         column-count: 6;
     }
 }
-/* @media (min-width: 1500px) {
-    .wrapper-items {
-        column-count: 4;
-    }
-}
-
-@media (min-width: 2000px) {
-    .wrapper-items {
-        column-count: 5;
-    }
-}
-
-@media (min-width: 2350px) {
-    .wrapper-items {
-        column-count: 6;
-    }
-} */

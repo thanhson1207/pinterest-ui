@@ -30,7 +30,7 @@ function Info() {
 
     return (
         <div>
-            <Header />
+            <Header name={name} />
             <InfoContent />
         </div>
     );

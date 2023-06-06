@@ -14,7 +14,7 @@ import { ApiContext } from '../../store/ApiContext';
 import { Navigate, useNavigate } from 'react-router-dom';
 
 function Search() {
-    const { data, setData } = useContext(ApiContext);
+    const { setData } = useContext(ApiContext);
     const [initialSearchValue, setInitialSearchValue] = useState('Search');
     const [searchValue, setSearchValue] = useState(initialSearchValue);
     const [showResult, setShowResult] = useState(false);
@@ -51,10 +51,6 @@ function Search() {
 
     const inputRef = useRef();
     const tippyRef = useRef();
-    const handleHideResult = () => {
-        setShowResult(false);
-        tippyRef.current?.destroy();
-    };
 
     const handleKeyDown = async (event) => {
         if (event.key === 'Enter') {

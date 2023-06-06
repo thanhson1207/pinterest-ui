@@ -208,24 +208,14 @@
     .create {
         display: none;
     }
-}
-@media (max-width: 680px) {
-    .message-btn {
-        display: none;
+    .name-Account-value {
+        font-size: 10px;
     }
-}
-@media (max-width: 680px) {
-    .information-btn {
-        display: none;
+    .Home-btn {
+        width: 65px;
+        margin-right: 5px;
     }
-}
-@media (max-width: 680px) {
-    .account-icon {
-        display: none;
-    }
-}
-@media (max-width: 680px) {
-    .notification-btn {
-        display: none;
+    .name-Account-icon {
+        width: 25px;
     }
 }
