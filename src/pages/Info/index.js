@@ -3,9 +3,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { auth, db, logout } from '../../Auth/firebase';
 import { query, collection, getDocs, where } from 'firebase/firestore';
+import './InfoPage.css';
 
 import InfoContent from '../../components/InfoPageContent/InfoContent';
 import Header from '../../components/header/header';
+import Content from '../../components/Content/content';
 
 function Info() {
     const [user, loading, error] = useAuthState(auth);
@@ -32,6 +34,8 @@ function Info() {
         <div>
             <Header name={name} />
             <InfoContent />
+            <div className="other-picture"> Other Pictures</div>
+            <Content />
         </div>
     );
 }
