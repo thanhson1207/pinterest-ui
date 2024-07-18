@@ -41,6 +41,7 @@
     background-color: white;
     padding: 30px;
     border-radius: 20px;
+    width: 400px;
 }
 
 .login__container_welcome {

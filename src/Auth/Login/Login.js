@@ -29,11 +29,12 @@ function Login() {
                         className="logo-auth"
                         height="60"
                         width="60"
-                        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png?20160129083321"
+                        // src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png?20160129083321"
+                        src="/logo.jpeg"
                         alt="Home"
                     />
 
-                    <h1 className="login__container_welcome">Welcome to Pinterest</h1>
+                    <h1 className="login__container_welcome">Welcome to Solid</h1>
                     <p className="login__container_ideas">Find new ideas to try</p>
 
                     <input

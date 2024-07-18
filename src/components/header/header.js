@@ -1,9 +1,6 @@
 import './header.css';
 import React from 'react';
-import {
-    faAngleDown,
-    faSignOutAlt,
-} from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
@@ -16,13 +13,7 @@ function Header({ name }) {
     return (
         <div className="wrapper-header">
             <div className="inner">
-                <img
-                    className="logo"
-                    height="50"
-                    width="50"
-                    src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png?20160129083321"
-                    alt="Home"
-                />
+                <img className="logo" height="50" width="50" src="/logo.jpeg" alt="Home" />
 
                 <a className="Home-btn" href="/">
                     Home
